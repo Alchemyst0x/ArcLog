@@ -1,0 +1,128 @@
+*
+!*/
+
+# ---------- Add items which should *NOT* be ignored below this line -----------
+
+# Common
+!LICENSE*
+!NOTICE*
+!README*
+
+# Configs
+!.editorconfig
+!.gitignore
+!.markdownlint.y*ml
+!.pre-commit-config.y*ml
+!.prettier*
+!.shellcheckrc
+
+# agebox
+!*.agebox
+!.ageboxreg.y*ml
+
+# JavaScript/TypeScript
+!package.json
+!tsconfig.json
+
+# Python
+!.python-version
+!.ruff.toml
+!pyproject.toml
+!requirements-dev.lock
+!requirements.lock
+
+# Directories
+!docker/**/*.y*ml
+!modules/**/*
+!scripts/**/*.py
+!scripts/**/*.sh
+!src/**/*.py
+!submodules/**/*
+!templates/**/*.j2
+!templates/**/*.y*ml
+!tests/**/*.py
+
+# --------- Add items which should *ALWAYS* be ignored below this line ---------
+
+# macOS
+*.icloud
+*.pdb
+*.py[cod]
+*.tsbuildinfo
+.Apple*
+.DS_Store
+.DocumentRevisions-V100
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+._*
+.apdisk
+.com.apple.*
+.fseventsd
+.next
+.npm
+.nuxt
+.nvm
+.venv
+.yarn
+Network Trash Folder
+[Tt]emporary*
+[Vv]irtual[Ee]nv
+__pycache__
+jspm_packages
+node_modules
+venv
+web_modules
+
+# Rust
+*.box
+*.rs.bk
+Cargo.lock
+debug/
+target/
+
+# Go
+*.dll
+*.dylib
+*.exe~
+*.out
+*.so
+*.test
+go.work
+go.work.sum
+
+# Credentials
+*.cert
+*.crt
+*.key
+*.pem
+*.ppk
+*_ed25519
+*_rsa
+.htaccess
+secring.*
+
+# Environments
+*.env*
+env/
+envs/
+
+# Docker
+**/docker/**/data/
+
+# Editors/IDEs
+.cursorrules
+.history
+.local
+.vscode-test
+
+# Logs
+*.log
+log*/
+
+# -------------- Add other overrides as necessary below this line --------------
+
+# Examples
+!*example*
