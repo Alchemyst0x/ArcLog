@@ -16,10 +16,28 @@ init_pre_commit() {
   } && echo "... Done!"
 }
 
-if [[ $# -eq 1 ]]; then
+add_all() {
+  if cd "$PROJECT_ROOT"; then
+    git add -A . && pre-commit run --all-files
+    return $?
+  fi
+}
+
+add_all_and_commit() {
+  local msg="$*"
+  msg=$(echo -en "$msg" | tr -s '[:blank:]')
+  if cd "$PROJECT_ROOT"; then
+    { add_all || add_all; } && git add -A . &&
+      git commit -m "$msg"
+  fi
+}
+
+if [[ $# -ge 1 ]]; then
   case "$1" in
     init) init_pre_commit ;;
     run) pre-commit run --all-files ;;
     sync) sync_env ;;
+    add-all) add_all ;;
+    commit-all) add_all_and_commit "${@:2}" ;;
   esac
 fi
